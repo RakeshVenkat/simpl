@@ -19,16 +19,16 @@ limitations under the License.
 <html lang="en">
 <head>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-33848682-1"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  window.dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'UA-33848682-1');
+//  philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build
+window.ga = window.ga || function() {
+  (ga.q = ga.q || []).push(arguments);
+};
+ga('create', 'UA-33848682-1', 'auto');
+ga('set', 'transport', 'beacon');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 <meta charset="utf-8">
 <meta name="description" content="Simplest possible examples of HTML, CSS and JavaScript.">
@@ -61,25 +61,26 @@ video {
 
   <h1><a href="../../index.html" title="simpl.info home page">simpl.info</a> video </h1>
 
-    <video controls poster="poster.jpg"></video>
+    <video controls playsinline poster="poster.jpg"></video>
 
   <p id="videoSrc"></p>
 
-  <script>
-  var video = document.querySelector('video');
-  document.querySelector("video").addEventListener("loadedmetadata", function(){
-    var fileName = this.currentSrc.replace(/^.*[\\\/]/, '');
-    document.querySelector("#videoSrc").innerHTML = "currentSrc: " + fileName +
-      "<br /> videoWidth: " + this.videoWidth + "px<br /> videoHeight: " + this.videoHeight + "px";
+<script>
+var video = document.querySelector('video');
+document.querySelector('video').addEventListener('loadedmetadata',
+  function() {
+    const fileName = this.currentSrc.replace(/^.*[\\/]/, '');
+    document.querySelector('#videoSrc').innerHTML = 'currentSrc: ' + fileName +
+  '<br /> videoWidth: ' + this.videoWidth + 'px<br /> videoHeight: ' +
+  this.videoHeight + 'px';
   });
-  var mq = window.matchMedia('(min-width: 480px) and (min-height: 480px)');
-  if (mq.matches) {
-    video.src = '../video/large.webm';
-  }
-  else {
-    video.src = '../video/small.webm';
-  }
-  </script>
+var mq = window.matchMedia('(min-width: 480px) and (min-height: 480px)');
+if (mq.matches) {
+  video.src = '../video/large.webm';
+} else {
+  video.src = '../video/small.webm';
+}
+</script>
 
   <a href="https://github.com/samdutton/simpl/blob/gh-pages/video" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
 

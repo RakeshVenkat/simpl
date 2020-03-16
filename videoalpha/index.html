@@ -19,16 +19,16 @@ limitations under the License.
 <html lang="en">
 <head>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-33848682-1"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  window.dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'UA-33848682-1');
+//  philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build
+window.ga = window.ga || function() {
+  (ga.q = ga.q || []).push(arguments);
+};
+ga('create', 'UA-33848682-1', 'auto');
+ga('set', 'transport', 'beacon');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 <meta charset="utf-8">
 <meta name="description" content="Simplest possible examples of HTML, CSS and JavaScript.">
@@ -48,20 +48,40 @@ gtag('config', 'UA-33848682-1');
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="css/main.css">
 
+<style>
+input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input {
+  border: none;
+  height: 18px;
+  position: relative;
+  top: 4px;
+  width: 18px;
+}
+p {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+}
+</style>
+
 </head>
 <body>
 
-  <video id="video1" autoplay src="video/dancer1.webm" loop muted></video>
-  <video id="video2" autoplay src="video/soccer1.webm" loop muted></video>
-  <video id="chrome" class="transparent" src="video/chrome.webm" loop muted></video>
+  <video id="video1" autoplay src="video/dancer1.webm" loop muted playsinline></video>
+  <video id="video2" autoplay src="video/soccer1.webm" loop muted playsinline></video>
+  <video id="chrome" class="transparent" src="video/chrome.webm" loop muted playsinline></video>
 
   <div id="container">
 
-    <h1><a href="../index.html" title="simpl.info home page">simpl.info</a> video alpha channel</h1>
+    <h1><a href="../index.html" title="simpl.info home page">simpl.info</a> Video alpha channel</h1>
 
-    <p>Click and drag videos to show CSS filters; double click to trigger CSS animation. Resize page to resize videos.</p>
-    <p>Double click background to swap between image and video.</p>
+    <p>Drag videos to show CSS filters; tap or double click to trigger CSS animation. Resize page to resize videos.</p>
+    <p>Tap or click background to swap between image and video.</p>
     <p>Select video background colour: <input id="colorInput" type="color"> (<span id="clearSpan">clear</span>)</p>
+
+    <p class="strong">This demo works in current versions of Firefox and Chrome on desktop and (sort of) on mobile, but not Safari.</p>
 
     <script src="js/main.js"></script>
 

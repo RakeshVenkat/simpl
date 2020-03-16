@@ -19,16 +19,16 @@ limitations under the License.
 <html lang="en">
 <head>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-33848682-1"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  window.dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'UA-33848682-1');
+//  philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build
+window.ga = window.ga || function() {
+  (ga.q = ga.q || []).push(arguments);
+};
+ga('create', 'UA-33848682-1', 'auto');
+ga('set', 'transport', 'beacon');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
 <meta charset="utf-8">
 <meta name="description" content="Simplest possible examples of HTML, CSS and JavaScript.">
@@ -58,6 +58,17 @@ width: 50vw;
 <body>
 
   <div id="container">
+
+    <div id="highlight">
+  <p>Last call for responses to our survey!
+  <br><br>
+  <strong>How do you use images on your website? What would make it easier?</strong>
+  <br><br>
+  Please complete our <a href="https://forms.gle/DJt35H2mdEe81Lae9" title="Images survey: Google Form"> online questionnaire</a>. It should only take a few minutes. We'll collate the responses then share the results.
+  <br><br>
+  Thanks for all the input so far.
+  </p>
+    </div>
 
     <h1><a href="../index.html" title="simpl.info home page">simpl.info</a> &lt;img&gt; with srcset using w&nbsp;values</h1>
 

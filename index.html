@@ -41,17 +41,16 @@ limitations under the License.
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://simpl.info">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-33848682-1"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-
-function gtag() {
-  window.dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'UA-33848682-1');
+//  philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build
+window.ga = window.ga || function() {
+  (ga.q = ga.q || []).push(arguments);
+};
+ga('create', 'UA-33848682-1', 'auto');
+ga('set', 'transport', 'beacon');
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 
   <script type="application/ld+json">
     {
@@ -195,15 +194,33 @@ gtag('config', 'UA-33848682-1');
 <body>
 
   <div id="container">
-    <!--     <div id="highlight">
-        <p>Subscribe to my free newsletter for audio, video and realtime.</p>
-        <p>Sign up: <a href="http://bit.ly/signupmedia" title="Newsletter sign-up">bit.ly/signupmedia</a>.</p>
-        <p>Archive: <a href="http://medianews.me" title="Newsletter archive">medianews.me</a>.﻿</p>
-      </div> -->
+<!--     <div id="highlight">
+      <p>Check out my new article: <a href="https://medium.com/@samdutton/website-prelaunch-checklist-14d0002b4c7c">Website prelaunch checklist</a><br>— simple techniques to find and fix glitches.</p>
+    </div> -->
+
+    <!-- <div id="highlight">
+      <p>I wrote an app!
+        <br><br>
+        <a href="https://medium.com/@samdutton/website-prelaunch-checklist-14d0002b4c7c">Multihouse</a> gets median scores for multiple URLs for multiple Lighthouse runs.</p>
+    </div> -->
 
     <div id="highlight">
-      <p>Check out my new article: <a href="https://medium.com/@samdutton/website-prelaunch-checklist-14d0002b4c7c">Website prelaunch checklist</a><br>— simple techniques to find and fix glitches.</p>
-    </div>
+			<p>HTML, CSS and JavaScript feature support across top browsers:
+			  <br><br>
+			  <a href="https://bit.ly/caniuse-stuff">bit.ly/caniuse-stuff</a>
+			</p>
+		</div>
+
+<!--     <div id="highlight">
+  <p>Last call for responses to our survey!
+  <br><br>
+  <strong>How do you use images on your website? What would make it easier?</strong>
+  <br><br>
+  Please complete our <a href="https://forms.gle/DJt35H2mdEe81Lae9" title="Images survey: Google Form"> online questionnaire</a>. It should only take a few minutes. We'll collate the responses then share the results.
+  <br><br>
+  Thanks for all the input so far.
+  </p>
+    </div> -->
 
     <h1>simpl.info</h1>
 
@@ -240,11 +257,13 @@ gtag('config', 'UA-33848682-1');
       <a href="canplaytype" title="canPlayType()">canPlayType()</a>
       <a href="canvas" title="Canvas element example">&lt;canvas&gt;</a>
       <a href="cors" title="CORS demo, using XMLHttpRequest">CORS with XHR</a>
+      <a href="imageset" title="CSS image-set() example">CSS background image-set()</a>
       <a href="cssfilters" title="CSS filters">CSS filters</a>
       <a href="flexboxcenter" title="CSS Flexbox center">CSS Flexbox: center</a>
       <a href="flexboxexpand" title="CSS Flexbox expand-to-fit example">CSS Flexbox: expand to fit</a>
       <a href="grid" title="CSS Grid simple example">CSS Grid: simple example</a>
       <a href="gridpage" title="CSS Grid page layout example">CSS Grid: page layout</a>
+      <a href="imageset" title="CSS image-set() example">CSS image-set()</a>
       <a href="cssnegativeselector" title="CSS negative selector example">CSS negative selector</a>
       <a href="cssregions" title="CSS regions example">CSS regions</a>
       <a href="csstextindent" title="CSS text-indent example">CSS text-indent</a>
@@ -267,11 +286,12 @@ gtag('config', 'UA-33848682-1');
       <a href="geolocation" title="Geolocation example">Geolocation</a>
       <a href="https://www.simpl.info/getusermedia" title="getUserMedia() example">getUserMedia</a>
       <a href="https://www.simpl.info/getusermedia/constraints" title="getUserMedia() example with constraints">getUserMedia: choose resolution</a>
-      <a href="https://www.simpl.info/getusermedia/sources" title="getUserMedia() example using MediaStreamTrack.getSources()">getUserMedia: select camera and microphone</a>
+      <a href="https://www.simpl.info/getusermedia/sources" title="getUserMedia() example using mediaDevices.enumerateDevices()">getUserMedia: select camera and microphone</a>
       <a href="history" title="History method example">History pushState() and popState()</a>
       <a href="softhyphen" title="Soft hyphen (&amp;shy;) example">Hyphenation (soft hyphen)</a>
       <a href="iframe" title="iframe element example">&lt;iframe&gt;</a>
       <a href="bigimage" title="Example of an image with large file size">Image: a big one (20MB)</a>
+      <a href="imageset" title="CSS image-set() example">image-set()</a>
       <a href="imagecapture" title="ImageCapture example: take a photo">ImageCapture</a>
       <a href="idbkeyval" title="IndexedDB IDB-Keyval example">IndexedDB: IDB-Keyval</a>
       <a href="inputtypes" title="Examples of input elements with different types">Input types: email, tel, url, date, time, colour</a>
@@ -283,7 +303,7 @@ gtag('config', 'UA-33848682-1');
       <a href="mediafragments" title="Media Fragments API">Media Fragments</a>
       <a href="mediaqueries" title="Media Queries demo">Media Queries</a>
       <a href="mse" title="Media Source Extensions example">Media Source Extensions (MSE)</a>
-      <a href="getusermedia/sources" title="getUserMedia() example using MediaStreamTrack.getSources()">MediaStreamTrack.getSources()</a>
+      <a href="getusermedia/sources" title="getUserMedia() example using mediaDevices.enumerateDevices()">mediaDevices.enumerateDevices()</a>
       <a href="mediarecorder" title="MediaStream Recording API">MediaRecorder</a>
       <a href="es6-modules" title="ES6 modules demo">ES6 modules</a>
       <a href="mutationobserver" title="MutationObserver example">MutationObserver</a>
